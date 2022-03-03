@@ -1,9 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vexana/vexana.dart';
 
 part 'character_model.g.dart';
 
 @JsonSerializable()
-class CharacterModel {
+class CharacterModel extends INetworkModel {
   int? charId;
   String? name;
   String? birthday;
@@ -34,5 +35,10 @@ class CharacterModel {
 
   Map<String, dynamic> toJson() {
     return _$CharacterModelToJson(this);
+  }
+
+  @override
+  fromJson(Map<String, dynamic> json) {
+    return _$CharacterModelFromJson(json);
   }
 }
