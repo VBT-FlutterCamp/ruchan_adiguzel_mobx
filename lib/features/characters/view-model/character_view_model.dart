@@ -1,7 +1,6 @@
 import '../../../core/base_view_model.dart';
 import '../model/character_model.dart';
 import '../service/char_network_manager.dart';
-import 'icharacter_view_model.dart';
 import '../../core/app_enums.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:mobx/mobx.dart';
@@ -11,10 +10,10 @@ class CharacterViewModel = _CharacterViewModelBase with _$CharacterViewModel;
 
 abstract class _CharacterViewModelBase with Store, BaseViewModel {
   late ICharNetworkManager charNetworkManager;
+  PageController controller = PageController();
 
   @observable
   List<CharacterModel?>? charModels;
-  // CharacterModel? c_model;
 
   @observable
   PageState pageState = PageState.LOADING;

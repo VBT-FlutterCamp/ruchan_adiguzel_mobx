@@ -1,14 +1,13 @@
-import 'dart:developer';
-
-import '../view-model/character_view_model.dart';
-import '../../core/app_enums.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../../core/base_view.dart';
+import '../../core/app_enums.dart';
+import '../../widgets/card_header.dart';
+import '../view-model/character_view_model.dart';
 
 class Characterview extends StatelessWidget {
-  const Characterview({Key? key}) : super(key: key);
+  Characterview({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,29 +19,22 @@ class Characterview extends StatelessWidget {
       },
       onPageBuilder: (BuildContext context, CharacterViewModel viewModel) {
         return Scaffold(
-          appBar: AppBar(title: Text("Characters")),
           body: Observer(
             builder: (context) {
               switch (viewModel.pageState) {
                 case PageState.LOADING:
                   return Center(child: CircularProgressIndicator());
                 case PageState.DONE:
-                  // return Center(
-                  //   child: Text("${viewModel.c_model?.name}"),
-                  // );
-                  return ListView.builder(
+                  return PageView.builder(
+                    controller: viewModel.controller,
+                    itemBuilder: (context, index) => CardHeader(
+                      model: viewModel.charModels?[index],
+                      currentIndex: index,
+                      length: viewModel.charModels?.length ?? 5,
+                    ),
                     itemCount: viewModel.charModels?.length,
-                    itemBuilder: (context, index) {
-                      log(index.toString());
-                      return Center(
-                        child: Card(
-                          child: ListTile(
-                              title: Text(viewModel.charModels?[index]?.name ??
-                                  "null")),
-                        ),
-                      );
-                    },
                   );
+
                 case PageState.ERROR:
                   return Center(child: Text("ERROR"));
               }
@@ -53,3 +45,14 @@ class Characterview extends StatelessWidget {
     );
   }
 }
+
+
+
+//  return ListView.builder(
+//                     scrollDirection: Axis.horizontal,
+//                     itemCount: viewModel.charModels?.length,
+//                     itemBuilder: (context, index) {
+//                       log(index.toString());
+//                       return CardHeader(model: viewModel.charModels?[index]);
+//                     },
+//                   );
