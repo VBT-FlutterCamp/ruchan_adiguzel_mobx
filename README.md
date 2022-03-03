@@ -1,16 +1,10 @@
 # b_bad
 
-A new Flutter project.
+Used mobx and [Breaking bad api](https://breakingbadapi.com/)
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<h1>ScreenShots</h1>
+<table>
+  <tr><td><img src="https://user-images.githubusercontent.com/44341663/156653907-6620f87c-6b56-414b-aae3-860dc2eafc3b.png" width =350/></td><td> <img src="https://user-images.githubusercontent.com/44341663/156653914-e88c9a7b-709d-4e48-89e7-6c27e3e3900e.png" width =350/></td><td><img src="https://user-images.githubusercontent.com/44341663/156653919-1822d91a-8a8d-4a88-86ba-5c228d340b6e.png" width =350/></td></tr>
+  <tr></tr>
+  <tr></tr>
+</table>
