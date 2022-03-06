@@ -1,5 +1,4 @@
-# b_bad
-
+# Breaking bad app With Mobx
 Used mobx and [Breaking bad api](https://breakingbadapi.com/)
 
 <h1>ScreenShots</h1>
